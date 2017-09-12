@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+[I18n.locale = :ja]
+
+100.times do
+  Human.create(
+    name: Faker::Name.name,
+    age: Faker::Number.between(1, 100),
+    birth: Faker::Date.birthday(18, 65),
+    alive: [true, false].sample,
+    profile: Faker::Lorem.sentence
+  )
+end
